@@ -104,7 +104,7 @@ function MainPage() {
           flexDirection: "column",
           height: "100vh",
           backgroundColor: (theme) => theme.palette.background.default,
-          color: (theme) => theme.palette.text.primary,
+          color: (theme) => (theme.palette.mode === "dark" ? "#000" : "#fff"),
           transition: "background-color 0.3s, color 0.3s",
         }}
       >
@@ -120,6 +120,7 @@ function MainPage() {
                 ? "0 0 15px 5px rgba(100, 130, 100, 0.2)"
                 : "0 0 15px 5px rgba(0, 0, 0, 0.2)",
             flexShrink: 0,
+            color: (theme) => (theme.palette.mode === "dark" ? "#000" : "#fff"),
           }}
         >
           <IconButton onClick={() => navigate(-1)}>
@@ -147,7 +148,7 @@ function MainPage() {
                   ? "0 0 18px rgba(72, 199, 116, 1)"
                   : "0 0 18px rgba(72, 199, 116, 0.8)",
               fontWeight: "bold",
-              fontFamily: "'rationale'",
+              fontFamily: "'Orbitron'",
               letterSpacing: "0.1em",
               fontSize: 22,
             }}
@@ -202,6 +203,7 @@ function MainPage() {
               <motion.div key={contact.name}>
                 <ListItem
                   sx={{
+                    fontFamily: "'Orbitron', sans-serif",
                     borderRadius: "16px",
                     marginBottom: "10px",
                     padding: isMobile ? "8px" : "12px",
@@ -223,6 +225,7 @@ function MainPage() {
                   <ListItemAvatar>
                     <Avatar
                       sx={{
+                        fontFamily: "'Orbitron', sans-serif",
                         boxShadow: (theme) =>
                           theme.palette.mode === "dark"
                             ? "0 0 10px rgba(100, 200, 255, 0.5)"
@@ -235,7 +238,7 @@ function MainPage() {
                   <ListItemText
                     primary={contact.name}
                     sx={{
-                      fontFamily: "'orbitron', sans-serif",
+                      fontFamily: "'Orbitron', sans-serif",
                       color: (theme) => theme.palette.text.primary,
                     }}
                   />
